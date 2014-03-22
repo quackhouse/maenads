@@ -1,0 +1,63 @@
+/*SETUP*/
+
+html {
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  font-family: "museo", 'helvetica', 'arial', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0,0,0);
+  color: rgba(0,0,0,.8);
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.picture-grid {
+  width: 800px;
+  height: 500px;
+  border: 1px dashed black;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family:  "arial", sans-serif;
+
+}
+
+th {
+  padding: 10px;
+}
+
+.link-list {
+  /*padding: 10px;*/
+}
+
+.link-list a {
+  display: block;
+  padding-bottom: 10px;
+}
+
+.error {
+  color: #F21142;
+}
+
+
+/*REUSABLE CLASSES*/
+
+h1, .header, h2 {
+  font-family:  "arial", sans-serif;
+  padding-bottom: 10px;
+}

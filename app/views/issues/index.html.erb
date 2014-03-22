@@ -1,3 +1,4 @@
+  <% if session[:admin] %>
 <h1>Listing issues</h1>
 
 <table>
@@ -25,3 +26,4 @@
 <br />
 
 <%= link_to 'New Issue', new_issue_path %>
+  <% end %>

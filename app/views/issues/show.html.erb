@@ -1,3 +1,4 @@
+  <% if session[:admin] %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -18,3 +19,4 @@
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
+  <% end %>
