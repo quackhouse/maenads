@@ -1,1 +1,15 @@
-<div class="picture-grid"></div>
+<link rel="stylesheet" href="../../assets/cube.css">
+<div class="home-container">
+  <% @articles.each do |article| %>
+    <div class="cube-container">
+    <div class="cube toFront">
+      <a href="/articles/<%= article.id %>"><div class="face top"><%= image_tag article.picture_link %></div></a>
+      <a href="/articles/<%= article.id %>"><div class="face front"><%= image_tag article.picture_link %></div></a>
+      <a href="/articles/<%= article.id %>"><div class="face bottom"><%= image_tag article.picture_link %></div></a>
+      <a href="/articles/<%= article.id %>"><div class="face left"><%= image_tag article.picture_link %></div></a>
+      <a href="/articles/<%= article.id %>"><div class="face right"><%= image_tag article.picture_link %></div></a>
+      <a href="/articles/<%= article.id %>"><div class="face rear"><%= image_tag article.picture_link %></div></a>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -81,6 +81,6 @@ class IssuesController < ApplicationController
     end
   end
   def home
-
+    @articles = Article.all
   end
 end

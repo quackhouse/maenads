@@ -2,10 +2,8 @@ MaenadsApp::Application.routes.draw do
 
   # root :to => "issues#show", :id => '1'
   root :to => "issues#home"
+  get '/admins/login' => 'admins#login'
   post '/admins/login' => 'admins#admin_create'
-
-
-  get '/login' => "sessions#create"
 
   resources :admins
 

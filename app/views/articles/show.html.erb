@@ -1,31 +1,21 @@
-<p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="../../assets/cube.css">
 
-<p>
-  <b>Picture link:</b>
-  <%= @article.picture_link %>
-</p>
 
-<p>
-  <b>Title:</b>
-  <%= @article.title %>
-</p>
+<div class="article-title"><%= @article.title %></div>
+<div class="article-author"><%= @article.author %> <span class="article-date"> <%= @article.article_date %></span></div>
 
-<p>
-  <b>Author:</b>
-  <%= @article.author %>
-</p>
+<div class="cube-container" style="position:relative;margin:0 auto;padding:40px;">
+  <div class="cube toFront">
+    <div class="face top"><%= image_tag @article.picture_link %></div>
+    <div class="face front"><%= image_tag @article.picture_link %></div>
+    <div class="face bottom"><%= image_tag @article.picture_link %></div>
+    <div class="face left"><%= image_tag @article.picture_link %></div>
+    <div class="face right"><%= image_tag @article.picture_link %></div>
+    <div class="face rear"><%= image_tag @article.picture_link %></div>
+  </div>
+</div>
 
-<p>
-  <b>Issue:</b>
-  <%= @article.issue_id %>
-</p>
+<div class="article-body">
 
-<p>
-  <b>Body:</b>
-  <%= @article.body %>
-</p>
-
-<p>
-  <b>Article date:</b>
-  <%= @article.article_date %>
-</p>
+  <%= @article.body.html_safe %>
+</div>
