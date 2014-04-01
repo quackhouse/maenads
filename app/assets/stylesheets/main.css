@@ -99,6 +99,11 @@ th {
     display: inline;
   }
 
+  textarea {
+    width: 800px;
+    height: 800px;
+  }
+
   /*REUSABLE CLASSES*/
 
   h1, h2 {
@@ -108,7 +113,7 @@ th {
   }
 
   .header {
-    font-family:  "estilo-pro", "arial", sans-serif;
+    font-family:  "", "arial", sans-serif;
     padding-bottom: 10px;
   }
 

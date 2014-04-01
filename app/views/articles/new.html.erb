@@ -1,26 +1,46 @@
   <% if session[:admin] %>
-<h1>New article</h1>
+  <h1>New article</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Back', articles_path %>
+  <%= link_to 'Back', articles_path %>
   <% end %>
-<script>
+  <script>
   var textarea = document.getElementById('article_body');
   var commandPressed = false;
-textarea.value = '<p>';
+  textarea.value = '<p>';
   textarea.addEventListener("keydown", function(e) {
     // Insert new paragraph on enter.
     if(e.keyCode === 13) {
       textarea.value += "</p> \n<p>";
       e.preventDefault();
       // shift b to create bold
-    } else if(e.keyCode === 66 && e.metaKey)  {
-      textarea.value += "<span class='bold'> BOLD TEXT HERE </span>"
-      // shift i to create italic
-    } else if(e.keyCode === 73 && e.metaKey) {
-      textarea.value += "<span class='italic'> ITALIC TEXT HERE </span>"
+    } else if(e.keyCode === 9) {
+      e.preventDefault();
+      checkForHelpers(textarea);
     }
   });
 
-</script>
+  function getLastWord(s) {
+    re = /\w+$/;
+      var lastWord = s.match(re);
+      return lastWord? lastWord[0] : '';
+  }
+
+  var keyWords = {
+    img: "<img src='URL HERE'>",
+    link: "<a href='URL HERE'> LINK TEXT HERE </a>",
+    bold: "<span class='bold'> BOLD TEXT HERE </span>",
+    italic: "<span class='italic'> ITALIC TEXT HERE </span>",
+    title: "<span class='header'> HEADER-STYLE TEXT HERE </span>"
+  }
+
+  function checkForHelpers(el) {
+    var lastWord = getLastWord(el.value);
+    if(keyWords.hasOwnProperty(lastWord)) {
+      textarea.value = textarea.value.substring(0, textarea.value.lastIndexOf(' ')) + ' ' + keyWords[lastWord];
+      // el.value += keyWords[lastWord];
+    }
+  }
+
+  </script>
