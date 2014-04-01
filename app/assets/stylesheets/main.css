@@ -48,12 +48,13 @@ img {
 
 }
 
-th {
-  padding: 10px;
+th, td {
+  padding-right: 20px;
+  padding-top: 5px;
 }
 
-.link-list {
-  /*padding: 10px;*/
+th {
+  font-size: 1.2em;
 }
 
 .link-list a {
@@ -89,6 +90,7 @@ th {
 }
 .article-date {
   padding-left: 10px;
+  font-size: .8em;
 }
 
 /*.face {

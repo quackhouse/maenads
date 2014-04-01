@@ -4,6 +4,7 @@ MaenadsApp::Application.routes.draw do
   root :to => "issues#home"
   get '/admins/login' => 'admins#login'
   post '/admins/login' => 'admins#admin_create'
+  get '/admins/logout' => 'admins#logout'
 
   resources :admins
 

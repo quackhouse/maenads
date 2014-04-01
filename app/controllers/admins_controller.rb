@@ -11,6 +11,9 @@ class AdminsController < ApplicationController
   end
 
   def login
+    if session[:admin] == true
+      redirect_to('/admins')
+    end
   end
 
   def admin_create
@@ -24,5 +27,10 @@ class AdminsController < ApplicationController
       flash[:notice] = "Incorrect password"
       render :login
     end
+  end
+
+  def logout
+    session[:admin] = false
+    redirect_to('/')
   end
 end
