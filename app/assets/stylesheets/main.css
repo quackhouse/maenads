@@ -93,16 +93,29 @@ th {
 
 /*.face {
   border: 5px solid black;
-}*/
+  }*/
 
-a {
-  display: inline;
-}
+  a {
+    display: inline;
+  }
 
-/*REUSABLE CLASSES*/
+  /*REUSABLE CLASSES*/
 
-h1, .header, h2 {
-  font-size: 3em;
-  font-family:  "estilo-pro", "arial", sans-serif;
-  padding-bottom: 10px;
-}
+  h1, h2 {
+    font-size: 3em;
+    font-family:  "estilo-pro", "arial", sans-serif;
+    padding-bottom: 10px;
+  }
+
+  .header {
+    font-family:  "estilo-pro", "arial", sans-serif;
+    padding-bottom: 10px;
+  }
+
+  .bold {
+    font-weight: 400;
+  }
+
+  .italic {
+    font-style: italic;
+  }

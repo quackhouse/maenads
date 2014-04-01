@@ -1,3 +1,10 @@
+// Textarea automatically adding line break
+
+
+
+
+// Turning Cubes
+
 var oldx = 0;
 var oldy = 0;
 var direction;
@@ -37,10 +44,10 @@ $(document).bind("mousemove", function (e) {
     else if (e.pageX < oldx && e.pageY == oldy) {
         direction="Front";
     }
-    if( mouseDown ) {
-        console.log(direction);
-        console.log(Date.now() - lastTurn);
-    }
+    // if( mouseDown ) {
+    //     console.log(direction);
+    //     console.log(Date.now() - lastTurn);
+    // }
     oldx=e.pageX;
     oldy=e.pageY;
     if( Date.now() - lastTurn > 500 ) {

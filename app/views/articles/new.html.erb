@@ -5,3 +5,22 @@
 
 <%= link_to 'Back', articles_path %>
   <% end %>
+<script>
+  var textarea = document.getElementById('article_body');
+  var commandPressed = false;
+textarea.value = '<p>';
+  textarea.addEventListener("keydown", function(e) {
+    // Insert new paragraph on enter.
+    if(e.keyCode === 13) {
+      textarea.value += "</p> \n<p>";
+      e.preventDefault();
+      // shift b to create bold
+    } else if(e.keyCode === 66 && e.metaKey)  {
+      textarea.value += "<span class='bold'> BOLD TEXT HERE </span>"
+      // shift i to create italic
+    } else if(e.keyCode === 73 && e.metaKey) {
+      textarea.value += "<span class='italic'> ITALIC TEXT HERE </span>"
+    }
+  });
+
+</script>
