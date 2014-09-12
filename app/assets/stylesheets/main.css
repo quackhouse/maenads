@@ -93,8 +93,12 @@ th {
   font-size: .8em;
 }
 
+p:first-line {
+  font-size: 1.2em;
+}
+
 /*.face {
-  border: 5px solid black;
+  border: 5px solid black;2
   }*/
 
   a {

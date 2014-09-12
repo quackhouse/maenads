@@ -7,3 +7,38 @@
   <%= link_to 'Show', @article %> |
   <%= link_to 'Back', articles_path %>
   <% end %>
+
+  <script>
+  var textarea = document.getElementById('article_body');
+  var commandPressed = false;
+  textarea.addEventListener("keydown", function(e) {
+    if(e.keyCode === 9) {
+      e.preventDefault();
+      checkForHelpers(textarea);
+    }
+  });
+
+  function getLastWord(s) {
+    re = /\w+$/;
+    var lastWord = s.match(re);
+    return lastWord? lastWord[0] : '';
+  }
+
+  var keyWords = {
+    img: "<img src='URL HERE'>",
+    link: "<a href='URL HERE'> LINK TEXT HERE </a>",
+    bold: "<span class='bold'> BOLD TEXT HERE </span>",
+    italic: "<span class='italic'> ITALIC TEXT HERE </span>",
+    title: "<span class='header'> HEADER-STYLE TEXT HERE </span>",
+    p: "\n<p> NEW PARAGRAPH </p>"
+  }
+
+  function checkForHelpers(el) {
+    var lastWord = getLastWord(el.value);
+    if(keyWords.hasOwnProperty(lastWord)) {
+      textarea.value = textarea.value.substring(0, textarea.value.lastIndexOf(' ')) + ' ' + keyWords[lastWord];
+      // el.value += keyWords[lastWord];
+    }
+  }
+
+  </script>
