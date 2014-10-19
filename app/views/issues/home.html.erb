@@ -12,10 +12,18 @@
     </div>
   </div>
 </div>
-<div class="home-container">
-  <% @articles.each do |article| %>
-  <div data-sr="enter left please, and hustle 20px" >
-    <img src="<%= article.picture_link %>"  class="front-page" alt="">
+<% num2 = 0 %>
+<% @articles.each do |article| %>
+<% directive = num2 % 2 == 0 ? "enter left" : "enter right" %>
+<div class="imgTool">
+  <div data-sr="<%= directive %>" class="image">
+    <img src="<%= article.picture_link %>"   alt="">
   </div>
-  <% end %>
+  <div class="info-link">
+    <span class="info-text">
+      <a href="/articles/<%= article.id  %>"><%= article.title %></a>
+    </span>
+  </div>
 </div>
+<% num2 += 1 %>
+<% end %>
