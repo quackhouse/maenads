@@ -1,43 +1,21 @@
-<link rel="stylesheet" href="../../assets/cube.css">
-<style>
-  .cube-container {
-  position: absolute;
-}
-
-.cube-container:nth-child(2) {
-  left: 300px;
-}
-
-.cube-container:nth-child(3) {
-  left: 600px;
-}
-
-.cube-container:nth-child(4) {
-  top: 300px;
-  left: 200px;
-}
-
-.cube-container:nth-child(5) {
-  top: 300px;
-  left: 400px;
-}
-
-.home-container {
-  position: absolute;
-}
-
-</style>
+<div class="nav">
+  <div class="links">
+    <% num = 1 %>
+    <% @articles.sort.each do |article| %>
+    <a href="/articles/<%= article.id %>"><%= num %></a>
+    <% num += 1 %>
+    <% end %>
+  </div>
+  <div class="title">
+    <div class="glitch" data-text="MAENADS">
+      MAENADS
+    </div>
+  </div>
+</div>
 <div class="home-container">
   <% @articles.each do |article| %>
-    <div class="cube-container">
-    <div class="cube toFront">
-      <a href="/articles/<%= article.id %>"><div class="face top"><%= image_tag article.picture_link %></div></a>
-      <a href="/articles/<%= article.id %>"><div class="face front"><%= image_tag article.picture_link %></div></a>
-      <a href="/articles/<%= article.id %>"><div class="face bottom"><%= image_tag article.picture_link %></div></a>
-      <a href="/articles/<%= article.id %>"><div class="face left"><%= image_tag article.picture_link %></div></a>
-      <a href="/articles/<%= article.id %>"><div class="face right"><%= image_tag article.picture_link %></div></a>
-      <a href="/articles/<%= article.id %>"><div class="face rear"><%= image_tag article.picture_link %></div></a>
-    </div>
+  <div data-sr="enter left please, and hustle 20px" >
+    <img src="<%= article.picture_link %>"  class="front-page" alt="">
   </div>
   <% end %>
 </div>
