@@ -15,13 +15,11 @@
 <% num2 = 0 %>
 <% @articles.each do |article| %>
 <% directive = num2 % 2 == 0 ? "enter left" : "enter right" %>
-<div class="imgTool">
   <div data-sr="<%= directive %>" class="image">
     <img src="<%= article.picture_link %>"   alt="">
-  </div>
   <div class="info-link">
     <span class="info-text">
-      <a href="/articles/<%= article.id  %>"><%= article.title %></a>
+      <a href="/articles/<%= article.id  %>"><%= article.title %> --></a>
     </span>
   </div>
 </div>

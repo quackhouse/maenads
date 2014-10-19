@@ -7,7 +7,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  font-family: 'helvetica', 'arial', sans-serif;
+  font-family: 'Varela', 'helvetica', 'arial', sans-serif;
   /*"clavo", */
   font-size: 16px;
   font-weight: 200;
@@ -41,65 +41,58 @@ a:hover {
   color: #89ABBF;
 }
 
-/*.container {
-  width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  }*/
 
-  img {
-    width: 100%;
-    /*height: 100%;*/
-  }
 
-  .title {
-    position: fixed;
-    z-index: 10000000;
-    right: 0;
-  }
+img {
+  width: 100%;
+  /*height: 100%;*/
+}
 
-  .article-links {
-    position: fixed;
-    font-size: 70px;
-    font-family: 'Varela', sans-serif;
-    left: 0;
-  }
+.title {
+  position: fixed;
+  z-index: 10000000;
+  right: 0;
+}
+
+.article-links {
+  position: fixed;
+  font-size: 70px;
+  font-family: 'Varela', sans-serif;
+  left: 0;
+}
 
 
 /*FRONT PAGE TOOL TIPS*/
-
-.imgTool {
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  min-height: 500px;
+.image {
   position: relative;
 }
-
-.image {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
 .info-link {
   width: 100%;
   height: 40%;
-  min-height: 200px;
+  /*min-height: 200px;*/
   position: absolute;
   z-index: 10000000;
   bottom: 0;
-  /*top: 400px;*/
   background-color: #9EC6E4;
   text-align: center;
+  opacity: 0.9;
   /*display: none;*/
 }
 
+
+
 .info-text {
-  width: 80%;
-  margin: 0 auto;
-  text-align: left;
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.info-text a {
   color: white;
-  margin-top: 20%;
-  margin-bottom: 20%;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.info-text a:hover {
+  color: black;
 }
